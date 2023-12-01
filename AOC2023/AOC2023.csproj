@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <TargetFramework>net6.0</TargetFramework>
+    <Platforms>x64</Platforms>
+    <LangVersion>10.0</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../lutra-dev/Lutra/Lutra.csproj" />
+    <ProjectReference Include="../lutra-dev/Lutra.Audio.OpenAL/Lutra.Audio.OpenAL.csproj" />
+    <ProjectReference Include="../lutra-dev/Lutra.MIDI/Lutra.MIDI.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Assets/**/*.*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="Lutra" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="AOC2023\" />
+    <Folder Include="src\Systems\" />
+  </ItemGroup>
+
+</Project>
