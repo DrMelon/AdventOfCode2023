@@ -11,11 +11,17 @@ public class DayScene : Scene
     protected List<string> Input;
     protected SimpleMenu DayMenu;
     protected RichText SimpleOutput;
+    protected Image BG;
     public int Day = 0;
     
     public override void Begin()
     {
         base.Begin();
+
+        BG = new Image("img/cloudbg.png");
+        BG.Repeat = true;
+        BG.Scale = 2;
+        AddGraphic(BG);
         
         DayMenu = new SimpleMenu(Game.HalfWidth, Game.HalfHeight, new Dictionary<string, Action>()
         {
@@ -26,6 +32,8 @@ public class DayScene : Scene
             {"Star 2", StarTwoInternal},
             {"<- Back", () => Game.RemoveScene()}
         });
+
+        
 
         SimpleOutput = new RichText(" ", DayMenu.NormalStyle);
         SimpleOutput.X = 64;
@@ -81,5 +89,12 @@ public class DayScene : Scene
     public virtual void StarTwo()
     {
         
+    }
+
+    public override void UpdateFirst()
+    {
+        base.UpdateFirst();
+
+        BG.X = (BG.X - 1) % (BG.Width * BG.ScaleX);
     }
 }

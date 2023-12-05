@@ -11,11 +11,15 @@ public class MenuScene : Scene
 
     public override void Begin()
     {
+        Game.Color = Color.Black;
+        
         base.Begin();
 
         mainMenu = new SimpleMenu(Game.HalfWidth, Game.HalfHeight, new Dictionary<string, Action>()
         {
             {"Day One", () => Game.AddScene(new DayOneScene())},
+            {"Day Two", () => Game.AddScene(new DayTwoScene())},
+            {"Day Three", () => Game.AddScene(new DayThreeScene())},
             {"Exit", () => Game.Close()}
         });
         

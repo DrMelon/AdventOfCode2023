@@ -14,10 +14,7 @@ public class DayOneScene : DayScene
       Day = 1;
    }
    
-   public bool IsDigit(char testChar)
-   {
-      return 48 <= testChar && testChar <= 57;
-   }
+
    
    public override void StarOne()
    {
@@ -30,7 +27,7 @@ public class DayOneScene : DayScene
          char firstDigit = '0';
          for (int i = 0; i < line.Length; i++)
          {
-            if (IsDigit(line[i]))
+            if (CharHelpers.IsDigit(line[i]))
             {
                firstDigit = line[i];
                break;
@@ -42,7 +39,7 @@ public class DayOneScene : DayScene
          char lastDigit = firstDigit;
          for (int i = line.Length - 1; i >= 0; i--)
          {
-            if (IsDigit(line[i]))
+            if (CharHelpers.IsDigit(line[i]))
             {
                lastDigit = line[i];
                break;
@@ -76,7 +73,7 @@ public class DayOneScene : DayScene
          int firstDigitLocation = line.Length - 1;
          for (int i = 0; i < line.Length; i++)
          {
-            if (IsDigit(line[i]))
+            if (CharHelpers.IsDigit(line[i]))
             {
                firstDigit = line[i];
                firstDigitLocation = i;
@@ -90,7 +87,7 @@ public class DayOneScene : DayScene
          int lastDigitLocation = 0;
          for (int i = line.Length - 1; i >= 0; i--)
          {
-            if (IsDigit(line[i]))
+            if (CharHelpers.IsDigit(line[i]))
             {
                lastDigit = line[i];
                lastDigitLocation = i;
