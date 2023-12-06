@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Lutra.Graphics;
 
 namespace AOC2023.Scenes;
 
@@ -59,6 +60,20 @@ public class DayFourScene : DayScene
 
             return newCard;
         }
+    }
+
+    public override void Begin()
+    {
+        base.Begin();
+        
+        var Elf = new Image("img/elf_scratch.png");
+        Elf.Scale = 2;
+        Elf.X = 128;
+        Elf.Y = Game.Height - 140;
+        Elf.Dropshadow = 2;
+        Elf.CenterOrigin();
+        
+        AddGraphic(Elf);
     }
 
     public override void StarOne()

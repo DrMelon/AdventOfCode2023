@@ -77,7 +77,8 @@ public class SimpleMenu : Entity
         
         if (InputManager.KeyPressed(Key.Up))
         {
-            Select((CurrentlySelected - 1) % Mappings.Count);
+            int newid = (CurrentlySelected - 1) % Mappings.Count;
+            Select(newid < 0 ? newid + Mappings.Count : newid);
         }
 
         if (InputManager.KeyPressed(Key.Enter))
