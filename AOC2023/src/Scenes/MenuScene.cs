@@ -21,6 +21,8 @@ public class MenuScene : Scene
             {"Day Two", () => Game.AddScene(new DayTwoScene())},
             {"Day Three", () => Game.AddScene(new DayThreeScene())},
             {"Day Four", () => Game.AddScene(new DayFourScene())},
+            {"Day Five", () => Game.AddScene(new DayFiveScene())},
+            {"Day Six", () => Game.AddScene(new DaySixScene())},
             {"Exit", () => Game.Close()}
         });
         
